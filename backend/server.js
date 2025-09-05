@@ -16,6 +16,10 @@ app.use(express.urlencoded({ extended: true }));
 const User = require('./models/User');
 const BloodRequest = require('./models/BloodRequest');
 
+const userRoutes = require('./routes/userRoutes');
+app.use('/api/users', userRoutes);
+
+
 // Routes (we'll add these later)
 app.get('/', (req, res) => {
   res.json({ message: 'AUST Blood Donor API is running!' });
